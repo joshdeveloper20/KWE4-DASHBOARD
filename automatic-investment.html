@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AUTOMATIC INVESTMENT</title>
+
+    <link rel="stylesheet" href="automatic-investment.css">
+
+    <!-- 
+        - FONT AWESOME CDN
+     -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </style>
+  </head>
+  <body>
+
+    <header>
+        <div class="header-container" id="header">
+              <i class="fa-solid fa-bars-staggered" id="toggle"></i>
+                <div class="header-img">
+                    <img src="img/headshot.jpg" alt="">
+                </div>
+        </div>
+        </header>
+
+    <div class="sidebar active" id="sidebar">
+        <div class="sidebar-container">
+                <a href="#" class="logo"><img src="img/kwe4-logo.png" alt=""></a>
+                <i class="fa-solid fa-xmark" id="cancel"></i>
+
+            <ul class="sidemenus">
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+                </li>
+                <li>
+                    <div class="list-with-children">
+                        <a href="#"><i class="fa-regular fa-user"></i> Account</a>
+                    <i class="fa-solid fa-angle-right"></i>
+                    </div>
+
+                    <div class="submenu">
+                        <a href="#">Update Profile</a>
+                        <a href="#">Change Password</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="invest.html"><i class="fa-solid fa-dollar-sign"></i> Invest</a>
+                </li>
+
+                 <li>
+                    <a href="withdraw.html"><i class="fa-regular fa-credit-card"></i> Withdraw</a>
+                </li>
+
+                <li>
+                    <a href="automatic-investment.html"><i class="fa-solid fa-rotate-right"></i> Automatic Investments</a>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa-solid fa-wallet"></i> Transaction</a>
+                </li>
+
+                <li>
+                    <div class="list-with-children">
+                        <a href="#"><i class="fa-regular fa-message"></i> Account</a>
+                    <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="submenu">
+                        <a href="#">Account 1</a>
+                        <a href="#">Account 2</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa-regular fa-user"></i> Referrals</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <main id="main">
+        
+        <div class="main-content">
+           <div class="top-layer">
+            <h3>Create New Automatic Investment </h3>
+            <button id="send">&plus; Create</button>
+
+
+            <div class="transaction-table">
+                <h2>Standing Orders</h2>
+                <div class="trac-row">
+                    <div class="show">
+                        <span>Show</span>
+                        <input type="number" name="" id="" placeholder="10">
+                        <span>entries</span>
+                    </div>
+
+                    <p>You do not have any standing orders yet</p>
+
+                    <div class="search">
+                        <span>Search:</span>
+                        <input type="text">
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Authorization</th>
+                        <th>Investment</th>
+                        <th>Interval</th>
+                        <th>Amount</th>
+                        <th>Next Due Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Authorization">Joshua</td>
+                            <td data-label="Investment">Joshua</td>
+                            <td data-label="Interval">Joshua</td>
+                            <td data-label="Amount">Joshua</td>
+                            <td data-label="Next Due Date">Joshua</td>
+                            <td data-label="Status">Joshua</td>
+                            <td data-label="Action">Joshua</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+           </div>
+            
+           
+
+
+           <!-- <<<<<<<<<<< POPUP SECTION >>>>>>>>>>>> -->
+
+           <div class="popup-menu hidden">
+            <div class="times" id="times">&times;</div>
+             <div class="top-text">
+                <h3>Quick Notes</h3>
+                <ul>
+                    <li>Together we design the version of the product and engage quicdistribution method.</li>
+                    <li>Together we design the version of the product and engage</li>
+                </ul>
+             </div>
+
+             <div class="tabbed-container">
+                <div class="tabbed-header">
+                    <button>
+                        <img src="img/piggy-vest.png" class="piggy" alt="piggy img"> One-Off Subscription
+                    </button>
+                    <button class="active">
+                        <i class="fa-solid fa-rotate-left"></i> Automatic Investment</button>
+                    <button><i class="fa-solid fa-mobile-screen"></i> Bank Transfer</button>
+                </div>
+
+                <div class="tabbed-body">
+                    <div class="tabbed tabbed-1">
+                        <p class="text-1">Create a standing order to fund your investment at regular intervals</p>
+                        <p class="text-2"><i class="fa-solid fa-rotate-left"></i> Automatic Investment</p>
+                        <p class="text-3">Add a debit card to continue</p>
+                        <button class="proceed-btn">&plus;</button>
+                    </div>
+                </div>
+             </div>
+           </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>KWE4 AFRICA LTD. All Right Reserved.</p>
+    </footer>
+    <script>
+        window.addEventListener('load', function(){
+             let toggleNav = document.getElementById('toggle')
+        let sidebar = document.getElementById('sidebar')
+        let main = document.getElementById('main')
+        let header = document.getElementById('header')
+        let body = document.querySelector('body')
+        let timeBar = document.getElementById('cancel')
+        let sendBtn = document.getElementById('send')
+        let times = document.getElementById('times')
+        let topLayer = document.querySelector('.top-layer')
+        let popUp = document.querySelector('.popup-menu')
+
+        
+        toggleNav.addEventListener('click', function(e){
+            if(body.offsetWidth >= 1200){
+                 sidebar.classList.toggle('remove')
+            main.classList.toggle('stretch')
+            header.classList.toggle('expand')
+            }else if(body.offsetWidth < 1198){
+            sidebar.classList.toggle('active')
+    }
+           
+        })
+
+
+    timeBar.addEventListener('click', function(){
+        sidebar.classList.toggle('active')
+        sidebar.classList.remove('remove')
+    })
+
+    sendBtn.addEventListener('click', function(){
+        if(popUp.classList.contains('hidden')){
+            popUp.classList.remove('hidden')
+            topLayer.classList.add('hidden')
+        }
+    })
+
+    times.addEventListener('click', function(){
+        popUp.classList.add('hidden')
+            topLayer.classList.remove('hidden')
+    })
+
+        })
+       
+    </script>
+  </body>
+</html>

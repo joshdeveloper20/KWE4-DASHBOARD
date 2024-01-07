@@ -1,0 +1,503 @@
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Sen", sans-serif;
+}
+
+:root {
+  --main-color: #f2f2f2;
+  --profile-name-col: #989898;
+  --gray-col-1: #b5b5b5;
+  --horizontal-col-1: #dadada;
+  --horizontal-col-2: #e6e6e6;
+  --dashboard-blue: #2946e9;
+  --sidebar-bg: #112699;
+  --menubar-col: #dadada;
+  --online-bg: #15ca62;
+  --sidebar-hover: #ffee59;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+/* HEADER STYLING STARTS */
+header {
+  background: #fff;
+  padding: 2rem 4rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  height: 7rem;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+header .header-container {
+  margin-left: 345px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 300ms;
+}
+
+header .header-container.expand {
+  margin-left: 0;
+}
+
+header .header-container .header-img {
+  position: relative;
+}
+
+header .header-container .header-img::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background-color: var(--online-bg);
+  position: absolute;
+  z-index: 2;
+  top: 10%;
+  right: -10px;
+}
+
+header .header-container .header-img img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+
+header .header-container i {
+  font-size: 24px;
+  color: var(--menubar-col);
+  cursor: pointer;
+}
+/* HEADER STYLING ENDS */
+
+/* SIDEBAR STYLES STARTS */
+
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  width: 345px;
+  background-color: var(--sidebar-bg);
+  transition: 300ms;
+  z-index: 4;
+}
+
+.sidebar-container {
+  padding: 20px 40px;
+  position: relative;
+}
+
+.fa-xmark {
+  visibility: hidden;
+  position: absolute;
+  right: 10%;
+  top: 5%;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sidebar.remove {
+  left: -345px;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 3.5rem;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.sidemenus {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.sidemenus li a {
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.8;
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  transition: 300ms;
+}
+
+.sidemenus li a:hover {
+  color: var(--sidebar-hover);
+}
+
+.sidemenus .list-with-children {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidemenus .list-with-children > a + i {
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.submenu {
+  margin-top: 1rem;
+  padding-left: 2rem;
+}
+
+.submenu a {
+  margin-bottom: 1rem;
+}
+
+.submenu a:last-child {
+  margin-bottom: 0;
+}
+
+/* SIDEBAR STYLES ENDS */
+
+/* <<<<<<<<<<<<<<<<<MAIN STYLING STARTS HERE>>>>>>>>> */
+main {
+  background: var(--main-color);
+  min-height: 100vh;
+  width: calc(100% - 345px);
+  margin-left: 345px;
+  transition: 300ms;
+  position: absolute;
+  z-index: 1;
+  margin-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+main.stretch {
+  width: 100%;
+  margin-left: 0px;
+}
+
+.main-content {
+  padding: 2rem 4rem;
+}
+
+.top-layer{
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    padding: 4rem 4rem 2rem 2rem;
+    border-radius: 4px;
+    margin-top: 4rem;
+    position: relative;
+}
+
+.top-layer h3{
+    font-size: 1.6rem;
+    border-bottom: 1px solid var(--horizontal-col-1);
+    padding-bottom: 1rem;
+}
+
+.top-layer p{
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--horizontal-col-1);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #aaa;
+}
+
+.top-layer img{
+    width: 180px;
+    margin: 0 auto;
+    display: block;
+    z-index: 4;
+}
+
+.top-layer button{
+    background-color: var(--dashboard-blue);
+    color: #fff;
+    padding: 1rem;
+    width: 150px;
+    margin: 2rem auto 1rem;
+    display: block;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* .top-layer .circle{
+    background-color: #D4FFE6;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    left: 40%;
+    transform: translate(50%, -90%);
+    z-index: 1;
+} */
+
+/* <<<<<<<<<<<<<<<<<MAIN STYLING ENDS HERE>>>>>>>>> */
+
+
+/* <<<<<<<<<< POP MENU STYLING STARTS HERE >>>>>>>>>>>>>>> */
+
+.hidden{
+  display: none;
+}
+
+.popup-menu{
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 4rem;
+  position: relative;
+}
+
+.popup-menu .times{
+  position: absolute;
+  top: 1%;
+  right: 3%;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.top-text{
+    max-width: 500px;
+    width: 100%;
+    margin: 3rem auto;
+    background-color: #ECEEF3;
+    padding: 2rem 3rem;
+    border-radius: 4px;
+}
+
+.top-text h3{
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.top-text ul{
+    list-style-type: disc;
+    padding-left: 2rem;
+}
+
+.top-text ul li{
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #989898;
+}
+
+.tabbed-container{
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tabbed-header{
+    border: 1px solid var(--horizontal-col-1);
+    display: flex;
+}
+
+.tabbed-header button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 2rem 0;
+    border-right: 1px solid var(--horizontal-col-1);
+    background-color: #F9FAFB;
+    cursor: pointer;
+}
+
+.tabbed-header button:first-child{
+    background-color: #fff;
+}
+
+.tabbed-header button:last-child{
+    border-right: none;
+}
+
+.tabbed-header button i{
+    margin-right: 1rem;
+}
+
+
+button .piggy{
+    width: 30px;
+}
+
+.tabbed-body {
+    border: 1px solid var(--horizontal-col-1);
+}
+
+.tabbed{
+    padding: 2rem 4rem;
+}
+
+.tabbed .sub{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--horizontal-col-1);
+    padding-bottom: 1.5rem;
+}
+
+.tabbed .sub > p{
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.tabbed .piggy{
+    width: 60px;
+}
+
+.tabbed .amount{
+    margin: 2rem 0;
+}
+
+.tabbed .amount p{
+    font-size: 1.6rem;
+    color: #989898;
+}
+
+.input-amount-wrapper{
+    display: flex;
+    margin-top: 1rem;
+    border: 1px solid var(--horizontal-col-1);
+    border-radius: 4px;
+}
+
+.input-amount-wrapper span{
+    font-size: 1.6rem;
+    background-color: #2946e9;
+    color: #fff;
+    padding: 1.5rem 2.5rem;
+    border-radius: 4px;
+}
+
+.input-amount-wrapper input{
+    width: 90%;
+    padding-left: 1rem;
+    font-size: 1.6rem;
+}
+
+.proceed-btn{
+    width: 150px;
+    padding: 1rem;
+    color: #fff;
+    background-color: #2946e9;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+
+/* <<<<<<<<<< POP MENU STYLING ENDS HERE >>>>>>>>>>>>>>> */
+
+/* <<<<<<<<<<< FOOTER STYLING STARTS HERE >>>>>>>>>>>>>> */
+footer{
+    background-color: #fff;
+    padding: 2rem 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+footer p{
+    text-align: center;
+}
+/* <<<<<<<<<<< FOOTER STYLING ENDS HERE >>>>>>>>>>>>>> */
+
+@media screen and (max-width: 1200px) {
+  .popup-menu{
+    max-width: 500px;
+    padding: 2rem;
+  }
+
+  .sidebar {
+    left: 0px;
+  }
+
+  .sidebar.active {
+    left: -345px;
+    z-index: 4;
+  }
+
+  .fa-xmark {
+    visibility: visible;
+  }
+
+  main {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  header .header-container {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  .main-content {
+    padding: 2rem 1rem;
+  }
+  .top-layer{
+    max-width: 400px;
+}
+  .top-layer img{
+    width: 150px;
+  }
+
+.top-layer button{
+    width: 120px;
+  }
+
+
+.top-layer h3{
+    font-size: 2rem;
+}
+
+.tabbed-header button{
+  flex-direction: column;
+  gap: 1rem;
+  flex-basis: 33.3%;
+}
+
+.tabbed{
+  padding: 2rem;
+}
+
+}
